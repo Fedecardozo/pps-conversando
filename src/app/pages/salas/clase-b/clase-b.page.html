@@ -1,0 +1,15 @@
+<app-chat
+  sala="b"
+  bg="bg2"
+  (spinner)="this.cambiarEstado($event)"
+  [hide]="this.spinner"
+></app-chat>
+@if(this.spinner) {
+<div class="div-spinner">
+  <h2>Cargando mensajes...</h2>
+  <div id="div">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</div>
+
+}

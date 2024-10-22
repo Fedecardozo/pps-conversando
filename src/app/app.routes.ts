@@ -29,4 +29,12 @@ export const routes: Routes = [
     canActivate: [authGuard],
     canDeactivate: [authDeactivateGuard],
   },
+  {
+    path: 'clase-a',
+    loadComponent: () => import('./pages/salas/clase-a/clase-a.page').then( m => m.ClaseAPage)
+  },
+  {
+    path: 'clase-b',
+    loadComponent: () => import('./pages/salas/clase-b/clase-b.page').then( m => m.ClaseBPage)
+  },
 ];

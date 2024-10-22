@@ -1,4 +1,4 @@
-@if(this.spinner){
+@if(!this.hide){
 <div class="chat">
   @if(this.userService.correo !== undefined) {
   <div class="card">
@@ -43,9 +43,5 @@
   </div>
 
   }
-</div>
-} @else {
-<div class="centro">
-  <i class="pi pi-spin pi-spinner" style="font-size: 5rem"></i>
 </div>
 }

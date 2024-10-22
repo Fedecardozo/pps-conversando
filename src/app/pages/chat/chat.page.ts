@@ -1,4 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -7,6 +14,7 @@ import {
   IonTitle,
   IonToolbar,
   IonButton,
+  IonSpinner,
 } from '@ionic/angular/standalone';
 import { UsersService } from 'src/app/service/users.service';
 import { DbService } from 'src/app/service/db.service';
@@ -19,6 +27,7 @@ import { Chat } from 'src/app/models/chat';
   styleUrls: ['./chat.page.scss'],
   standalone: true,
   imports: [
+    IonSpinner,
     IonButton,
     IonContent,
     IonHeader,
@@ -34,12 +43,14 @@ export class ChatPage implements OnInit {
   value: string = '';
   subcripcion?: Subscription;
   listMessages: Chat[] = [];
-  spinner: boolean = false;
-  bg: string = 'bg2';
+  @Output() spinner = new EventEmitter<boolean>();
+  @Input() bg: string = 'bg1';
+  @Input() sala: string = 'a';
+  @Input() hide: boolean = true;
 
   enviarMsj() {
     if (this.value !== '' && this.userService.correo) {
-      this.db.addChat(this.value, this.userService.correo);
+      this.db.addChat(this.value, this.userService.correo, this.sala);
       this.value = '';
     }
   }
@@ -50,11 +61,11 @@ export class ChatPage implements OnInit {
 
   ngOnInit(): void {
     this.subcripcion = this.db
-      .getChats()
+      .getChats(this.sala)
       .valueChanges()
       .subscribe((next) => {
         this.listMessages = next as Chat[];
-        this.spinner = true;
+        this.spinner.emit(false);
       });
   }
 
