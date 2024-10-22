@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { authDeactivateGuard } from './guards/deactivate.guard';
+import { authDeactivateGuard } from './guards/auth-deactivate.guard';
 
 export const routes: Routes = [
   {
@@ -31,10 +31,12 @@ export const routes: Routes = [
   },
   {
     path: 'clase-a',
-    loadComponent: () => import('./pages/salas/clase-a/clase-a.page').then( m => m.ClaseAPage)
+    loadComponent: () =>
+      import('./pages/salas/clase-a/clase-a.page').then((m) => m.ClaseAPage),
   },
   {
     path: 'clase-b',
-    loadComponent: () => import('./pages/salas/clase-b/clase-b.page').then( m => m.ClaseBPage)
+    loadComponent: () =>
+      import('./pages/salas/clase-b/clase-b.page').then((m) => m.ClaseBPage),
   },
 ];

@@ -20,6 +20,7 @@ import { UsersService } from 'src/app/service/users.service';
 import { DbService } from 'src/app/service/db.service';
 import { Subscription } from 'rxjs';
 import { Chat } from 'src/app/models/chat';
+import { ViewWillEnter } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat',
@@ -37,7 +38,7 @@ import { Chat } from 'src/app/models/chat';
     FormsModule,
   ],
 })
-export class ChatPage implements OnInit {
+export class ChatPage implements ViewWillEnter {
   userService: UsersService = inject(UsersService);
   db: DbService = inject(DbService);
   value: string = '';
@@ -59,7 +60,7 @@ export class ChatPage implements OnInit {
     return new Date(fecha).toLocaleString();
   }
 
-  ngOnInit(): void {
+  ionViewWillEnter(): void {
     this.subcripcion = this.db
       .getChats(this.sala)
       .valueChanges()
