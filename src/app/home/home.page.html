@@ -1,6 +1,30 @@
-<header>
-  <ion-button color="danger" (click)="cerrarSesion()">
-    Cerrar sesión &nbsp;
-    <i class="fa-solid fa-arrow-right-from-bracket fa-xl"></i>
-  </ion-button>
-</header>
+<ion-fab vertical="top" horizontal="end">
+  <ion-fab-button (click)="cerrarSesion()" color="light">
+    <i
+      class="fa-solid fa-arrow-right-from-bracket fa-lg"
+      style="color: #fc0303"
+    ></i>
+  </ion-fab-button>
+</ion-fab>
+
+<div class="container-menu">
+  <button
+    routerLink="/chat"
+    expand="block"
+    color="success"
+    class="btn-home bg1"
+  >
+    PPS-4A
+  </button>
+  <br />
+  <button routerLink="/chat" expand="block" color="danger" class="btn-home bg2">
+    PPS-4B
+  </button>
+  <!-- <button class="btn mb-3" routerLink="/cosas-lindas">
+    <span> Cosas Lindas </span>
+  </button>
+
+  <button class="btn mb-3" routerLink="/cosas-feas">
+    <span> Cosas Feas </span>
+  </button> -->
+</div>

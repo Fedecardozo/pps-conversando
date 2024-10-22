@@ -5,16 +5,27 @@ import {
   IonTitle,
   IonContent,
   IonButton,
+  IonFabButton,
+  IonFab,
 } from '@ionic/angular/standalone';
 import { UsersService } from '../service/users.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [
+    IonFab,
+    IonFabButton,
+    IonButton,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    RouterLink,
+  ],
 })
 export class HomePage {
   public router: Router = inject(Router);
