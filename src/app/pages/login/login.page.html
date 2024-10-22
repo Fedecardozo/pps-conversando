@@ -1,0 +1,43 @@
+<main>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="fg">
+    <h3>Bienvenido</h3>
+
+    <label for="username">Correo</label>
+    <input
+      type="text"
+      placeholder="ejemplo@g.com"
+      id="username"
+      formControlName="correo"
+    />
+    <div class="cont-p">
+      @if(this.fg.controls['correo'].errors !== null &&
+      this.fg.controls["correo"].touched) { @if
+      (this.fg.controls['correo'].errors!['required']) {
+      <p>El campo esta vacio</p>
+      } @else if (this.fg.controls['correo'].errors!['email']) {
+      <p>Correo invalido</p>
+      } }
+    </div>
+
+    <label for="password">Contraseña</label>
+    <input
+      type="password"
+      placeholder="Clave"
+      id="password"
+      formControlName="clave"
+    />
+    <div class="cont-p">
+      @if(this.fg.controls['clave'].errors !== null &&
+      this.fg.controls["clave"].touched) { @if
+      (this.fg.controls['clave'].errors!['required']) {
+      <p>El campo esta vacio</p>
+      } }
+    </div>
+
+    <button>Iniciar sesión</button>
+  </form>
+</main>
