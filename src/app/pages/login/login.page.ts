@@ -12,6 +12,7 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { Alert } from 'src/app/models/alert';
 import { UsersService } from 'src/app/service/users.service';
@@ -23,6 +24,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
+    IonButton,
     IonContent,
     IonHeader,
     IonTitle,

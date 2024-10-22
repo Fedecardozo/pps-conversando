@@ -37,7 +37,17 @@
       <p>El campo esta vacio</p>
       } }
     </div>
-
-    <button>Iniciar sesión</button>
+    <div class="div-btns">
+      <ion-button (click)="cargaUsuario(usuarios[0])" shape="round">
+        Fede
+      </ion-button>
+      <ion-button (click)="cargaUsuario(usuarios[1])" shape="round">
+        Luna
+      </ion-button>
+      <ion-button (click)="cargaUsuario(usuarios[2])" shape="round">
+        Clari
+      </ion-button>
+    </div>
+    <button (click)="acceder()">Iniciar sesión</button>
   </form>
 </main>
