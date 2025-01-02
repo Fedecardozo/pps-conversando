@@ -27,7 +27,7 @@ Los mensajes propios se alinearán a la derecha, los demás, a la izquierda.
 
 ## Chat PPS-4B
 <p align="center">
-  <img width="450" src="(https://github.com/user-attachments/assets/247d7e1b-12c2-49cf-b3af-2c21ae85f3d4">
+  <img width="450" src="https://github.com/user-attachments/assets/247d7e1b-12c2-49cf-b3af-2c21ae85f3d4">
 </p>
 
 <p align="center">
